@@ -1,4 +1,3 @@
-const { openStdin } = require('process');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
