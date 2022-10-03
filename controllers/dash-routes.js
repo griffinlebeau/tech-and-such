@@ -31,7 +31,13 @@ router.get('/', withAuth, (req, res) => { // get all single user posts
             }
         ]
     })    
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+      res.render('dash', {
+        posts,
+        loggedIn: true
+    })}
+    )
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -50,7 +56,7 @@ router.get('/edit/:id', withAuth, (req, res) => { // get single post from dashbo
           include: [
             {
               model: Comment,
-              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+              attributes: ['id', 'text', 'post_id', 'user_id', 'created_at'],
               include: {
                 model: User,
                 attributes: ['username']

@@ -10,6 +10,10 @@
       <label for="post-url">Link</label>
       <input id="post-url" name="post-url" />
     </div>
+    <div>
+      <label for="post-text">Thoughts</label>
+      <textarea id="post-text" name="post-text"></textarea>
+    </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
@@ -21,7 +25,7 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info-many post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <a href="/dash/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
   </ol>
