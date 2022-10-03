@@ -14,8 +14,8 @@ router.get('/', (req, res) => { // get all comments
 router.post('/', withAuth, (req, res) => { // called from submit button
     Comment.create({ // create comment at post /api/comments
         text: req.body.text, // textarea in comment form 
-        post_id: req.body.post_id, // from window location of post
-        user_id: req.session.user_id // from saved session
+        user_id: req.session.user_id,
+        post_id: req.body.post_id // from saved session
     })
     .then(dbCommentData => res.json(dbCommentData)) // returns object of new comment
     .catch(err => {
