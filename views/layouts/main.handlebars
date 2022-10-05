@@ -7,25 +7,25 @@
   <title>Tech And Such</title>
 </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Tech And Such</a>
-      </h1>
-      <nav>
+<body style="background-color:antiquewhite">
+  <div>
+    <header style="display:flex; align-items:center; background-color:#FFBCB5; border-radius:10px">
+      <h2 style="width:20%; padding-left:100px">
+        <a style="text-decoration:none; color:black" href="/">Tech And Such</a>
+      </h2>
+      <nav style="width:80%">
         {{#if loggedIn}}
-        <a href="/dash">dashboard</a>
+        <a style="text-decoration:none; padding:40px; color:black" href="/dash">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a style="text-decoration:none; padding:40px; color:black" href="/login">login</a>
         {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer style="text-align:center">
       Thanks for visiting!
     </footer>
   </div>
