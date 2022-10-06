@@ -1,12 +1,12 @@
-<article class="post">
-  <div class="title">
-    <a href="{{post_url}}" target="_blank">{{title}}</a>
+<article style="background-color:#F2E5D7; border-radius:10px; margin:20px;">
+  <div style="display:flex; align-items:center">
+    <a style="padding:20px; text-decoration:none; color:black; font-weight:bolder; font-size:x-large;" href="{{post_url}}" target="_blank">{{title}}</a>
     <span>({{format_url post_url}})</span>
   </div>
-  <div class="text">
+  <div style="margin:10px;">
       {{text}}
   </div>
-  <div class="meta">
+  <div style="margin:10px;">
     by {{user.username}} on {{format_date created_at}}
     |
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
